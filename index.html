@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive card form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.google.com/specimen/Space+Grotesk"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <!-- --------------------main left part--------------- -->
+      <div class="left-part">
+        <div class="card-front">
+          <img src="images/card-logo.svg" alt="" width="65px" />
+          <p id="card-number" class="card-number">0000 0000 0000 0000</p>
+          <div class="front-card-bottom">
+            <p id="card-name">uwais shaik</p>
+            <div class="mm-yy">
+              <p id="card-exp-mm">00</p>
+              <span>/</span>
+              <p id="card-exp-yy">00</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-back">
+          <p id="card-cvc">000</p>
+        </div>
+      </div>
+      <!-- ----------------main right part-------------- -->
+
+      <div class="right-part">
+        <div class="user-data-container" id="user-data-container" novalidate>
+          <form action="">
+            <div class="inputbox">
+              <span>CARD HOLDER</span>
+              <input
+                type="text"
+                class="card-holder-input"
+                placeholder="e.g. uwais shaik"
+                id="input-user-name"
+                required
+              />
+            </div>
+            <div class="inputbox">
+              <span>CARD NUMBER</span>
+              <input
+                type="text"
+                class="card-number-input"
+                placeholder="e.g. 1234 5678 9123 4567"
+                id="input-card-number"
+                maxlength="19"
+                required
+              />
+            </div>
+
+            <div id="card-num-error" class="event-msg"></div>
+            <div id="card-letter-error" class="event-msg"></div>
+
+            <div class="flexbox">
+              <div class="inputbox inpmm">
+                <span>EXP (MONTH)</span>
+                <input
+                  type="text"
+                  class="month-input"
+                  placeholder="MM"
+                  id="input-exp-month"
+                  maxlength="2"
+                  max="12"
+                />
+              </div>
+              <div class="inputbox inpyy">
+                <span>EXP (YEAR)</span>
+                <input
+                  type="text"
+                  class="year-input"
+                  placeholder="yy"
+                  maxlength="2"
+                  id="input-exp-year"
+                />
+              </div>
+              <div class="inputbox inpcvv">
+                <span>CVC</span>
+                <input
+                  type="text"
+                  maxlength="3"
+                  class="cvv-input"
+                  placeholder="e.g. 123"
+                  id="input-card-cvc"
+                  pattern="[0-9]"
+                  required
+                />
+              </div>
+            </div>
+            <div class="error-container">
+              <div id="mm-error" class="event-msg"></div>
+              <div id="yy-error" class="event-msg"></div>
+              <div id="cvc-error" class="event-msg"></div>
+            </div>
+            <button
+              class="confirm-button"
+              id="submit-btn"
+              onclick="registeruser()"
+            >
+              Confirm
+            </button>
+          </form>
+        </div>
+
+        <div class="thankyou-container" id="thankyou-container">
+          <img src="images/icon-complete.svg" alt="" class="thankyou-image" />
+          <h1>THANK YOU</h1>
+          <p>we added your card details</p>
+          <input
+            class="thankyou-button"
+            type="submit"
+            id="confirm-button-end"
+            value="Confirm"
+            onclick="showinputform()"
+          />
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

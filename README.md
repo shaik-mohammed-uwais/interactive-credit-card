@@ -1,1 +1,1 @@
-https://uwais-interactive-credit-card.netlify.app/
+https://frontendmentor-uwais-card.netlify.app/
